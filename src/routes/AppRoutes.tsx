@@ -1,0 +1,26 @@
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Dashboard from '../pages/Dashboard';
+import TestCaseManagement from '../pages/TestCaseManagement';
+import BugTracking from '../pages/BugTracking';
+import ProjectManagement from '../pages/ProjectManagement';
+import AIInsights from '../pages/AIInsights';
+import Reports from '../pages/Reports';
+import Settings from '../pages/Settings';
+
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/test-cases" element={<TestCaseManagement />} />
+      <Route path="/bugs" element={<BugTracking />} />
+      <Route path="/projects" element={<ProjectManagement />} />
+      <Route path="/ai-insights" element={<AIInsights />} />
+      <Route path="/reports" element={<Reports />} />
+      <Route path="/settings" element={<Settings />} />
+    </Routes>
+  );
+};
+
+export default AppRoutes;
