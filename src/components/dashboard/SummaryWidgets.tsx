@@ -1,7 +1,10 @@
 import React from 'react';
 import { ClipboardCheck, CheckCircle, XCircle, Bug, Clock, Brain } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const SummaryWidgets = () => {
+  const navigate = useNavigate();
+
   const widgets = [
     {
       title: 'Total Test Cases',
@@ -9,7 +12,8 @@ const SummaryWidgets = () => {
       icon: <ClipboardCheck size={20} />,
       color: 'bg-blue-500',
       change: '+12% from last week',
-      positive: true
+      positive: true,
+      path: '/test-cases'
     },
     {
       title: 'Passed Tests',
@@ -17,7 +21,8 @@ const SummaryWidgets = () => {
       icon: <CheckCircle size={20} />,
       color: 'bg-green-500',
       change: '+8% from last week',
-      positive: true
+      positive: true,
+      path: '/test-cases'
     },
     {
       title: 'Failed Tests',
@@ -25,7 +30,8 @@ const SummaryWidgets = () => {
       icon: <XCircle size={20} />,
       color: 'bg-red-500',
       change: '+3% from last week',
-      positive: false
+      positive: false,
+      path: '/test-cases'
     },
     {
       title: 'Open Bugs',
@@ -33,7 +39,8 @@ const SummaryWidgets = () => {
       icon: <Bug size={20} />,
       color: 'bg-orange-500',
       change: '-5% from last week',
-      positive: true
+      positive: true,
+      path: '/bugs'
     },
     {
       title: 'Tasks In Progress',
@@ -41,7 +48,8 @@ const SummaryWidgets = () => {
       icon: <Clock size={20} />,
       color: 'bg-yellow-500',
       change: 'No change',
-      positive: null
+      positive: null,
+      path: '/projects'
     },
     {
       title: 'AI Generated Tests',
@@ -49,7 +57,8 @@ const SummaryWidgets = () => {
       icon: <Brain size={20} />,
       color: 'bg-purple-500',
       change: '+24% from last week',
-      positive: true
+      positive: true,
+      path: '/ai-insights'
     }
   ];
 
@@ -58,7 +67,8 @@ const SummaryWidgets = () => {
       {widgets.map((widget, index) => (
         <div 
           key={index} 
-          className="bg-white rounded-lg shadow p-5 border border-gray-100 hover:shadow-md transition-shadow scale-in"
+          className="bg-white rounded-lg shadow p-5 border border-gray-100 hover:shadow-md transition-shadow scale-in cursor-pointer"
+          onClick={() => navigate(widget.path)}
         >
           <div className="flex justify-between items-start">
             <div>

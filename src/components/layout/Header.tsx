@@ -1,7 +1,10 @@
 import React from 'react';
 import { Search, Bell, HelpCircle, UserCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="bg-white h-16 border-b border-gray-200 flex items-center justify-between px-6 sticky top-0 z-10">
       <div className="flex-1 max-w-xl">
@@ -22,7 +25,10 @@ const Header = () => {
         <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-full transition-colors">
           <HelpCircle size={20} />
         </button>
-        <div className="flex items-center gap-2 pl-4 border-l border-gray-200">
+        <div 
+          className="flex items-center gap-2 pl-4 border-l border-gray-200 cursor-pointer"
+          onClick={() => navigate('/login')}
+        >
           <UserCircle size={28} className="text-gray-600" />
           <span className="font-medium text-sm text-gray-700">John Doe</span>
         </div>

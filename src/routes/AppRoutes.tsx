@@ -7,11 +7,15 @@ import ProjectManagement from '../pages/ProjectManagement';
 import AIInsights from '../pages/AIInsights';
 import Reports from '../pages/Reports';
 import Settings from '../pages/Settings';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/test-cases" element={<TestCaseManagement />} />
       <Route path="/bugs" element={<BugTracking />} />
