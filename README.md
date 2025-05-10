@@ -6,6 +6,10 @@
 
 VerityONE is an AI-powered SaaS platform designed to streamline test case writing, bug tracking, and project management for software quality assurance teams. The platform leverages artificial intelligence to automate test case generation, provide intelligent insights, and optimize QA workflows.
 
+## Live Demo
+
+Visit the live demo: [VerityONE Demo](https://lustrous-sunshine-c4e368.netlify.app)
+
 ## Features
 
 - 🤖 **AI-Powered Test Generation**: Automatically generate test cases from requirements
@@ -51,6 +55,7 @@ npm run dev
 - **Icons**: Lucide React
 - **Build Tool**: Vite
 - **Testing**: Vitest
+- **Deployment**: Netlify
 
 ## Project Structure
 
