@@ -62,11 +62,33 @@ npm run dev
 ```
 src/
 ├── components/         # Reusable UI components
+│   ├── bugs/          # Bug tracking components
+│   ├── dashboard/     # Dashboard components
+│   ├── layout/        # Layout components
+│   ├── project/       # Project management components
+│   └── testcase/      # Test case components
 ├── pages/             # Page components
 ├── routes/            # Route configurations
 ├── styles/            # Global styles and animations
 └── main.tsx          # Application entry point
 ```
+
+## Bug Tracking Components
+
+The bug tracking system is modularized into several components:
+
+- `BugAttachments.tsx`: Handles file attachments for bug reports
+- `BugAIInsights.tsx`: Provides AI-powered analysis and suggestions
+- `BugActions.tsx`: Contains action buttons and integration options
+- `BugActivity.tsx`: Shows activity history and comments
+- `BugComments.tsx`: Manages the comment system
+- `BugDetails.tsx`: Displays detailed bug information
+- `BugList.tsx`: Shows the list of all bugs
+
+## Deployment
+
+The application is deployed on Netlify. You can visit the live demo at:
+[https://lustrous-sunshine-c4e368.netlify.app](https://lustrous-sunshine-c4e368.netlify.app)
 
 ## Contributing
 
