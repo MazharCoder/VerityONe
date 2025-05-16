@@ -23,7 +23,7 @@ const Sidebar = () => {
 
   return (
     <aside className="bg-white w-64 h-full shadow-md">
-      <div className="p-4 border-b border-gray-200">
+      <div className="px-4 py-3 border-b border-gray-200">
         <div className="flex items-center">
           <div className="bg-blue-600 text-white p-2 rounded-md mr-2">
             <ClipboardCheck size={24} />

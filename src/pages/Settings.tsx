@@ -518,7 +518,7 @@ const Settings = () => {
 
   return (
     <div className="flex h-[calc(100vh-180px)] animate-[fadeIn_0.3s_ease-in-out]">
-      <div className="w-64 bg-white rounded-lg shadow mr-6 overflow-hidden border border-gray-200">
+      <div className="w-64   rounded-lg shadow mr-6  bg-white overflow-y-auto   border border-gray-200">
         <div className="p-4 border-b border-gray-200">
           <h2 className="font-medium text-gray-800">Settings</h2>
         </div>
