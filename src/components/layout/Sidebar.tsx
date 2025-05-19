@@ -28,7 +28,7 @@ const Sidebar = () => {
           <div className="bg-blue-600 text-white p-2 rounded-md mr-2">
             <ClipboardCheck size={24} />
           </div>
-          <h1 className="text-xl font-bold text-gray-800">VerityONE</h1>
+          <h1 className="text-xl font-bold text-gray-800">My Project for details</h1>
         </div>
       </div>
       <nav className="p-4">
