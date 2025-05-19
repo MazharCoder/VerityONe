@@ -41,7 +41,7 @@ const ProjectManagement = () => {
 
   return (
     <div className="h-full animate-[fadeIn_0.3s_ease-in-out]">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Project Management</h1>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
@@ -51,12 +51,12 @@ const ProjectManagement = () => {
         </div>
       </div>
       
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center">
-          <div className="flex bg-gray-100 rounded-md p-1">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+        <div className="flex items-center w-full md:w-auto">
+          <div className="flex bg-gray-100 rounded-md p-1 w-full md:w-auto overflow-x-auto">
             <button
               onClick={() => setCurrentView('kanban')}
-              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm whitespace-nowrap ${
                 currentView === 'kanban'
                   ? 'bg-white text-blue-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-800'
@@ -67,7 +67,7 @@ const ProjectManagement = () => {
             </button>
             <button
               onClick={() => setCurrentView('list')}
-              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm whitespace-nowrap ${
                 currentView === 'list'
                   ? 'bg-white text-blue-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-800'
@@ -78,7 +78,7 @@ const ProjectManagement = () => {
             </button>
             <button
               onClick={() => setCurrentView('timeline')}
-              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm whitespace-nowrap ${
                 currentView === 'timeline'
                   ? 'bg-white text-blue-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-800'
@@ -89,7 +89,7 @@ const ProjectManagement = () => {
             </button>
             <button
               onClick={() => setCurrentView('calendar')}
-              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm whitespace-nowrap ${
                 currentView === 'calendar'
                   ? 'bg-white text-blue-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-800'
@@ -101,14 +101,14 @@ const ProjectManagement = () => {
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
-          <select className="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <div className="flex items-center gap-3 w-full md:w-auto">
+          <select className="w-full md:w-auto px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="all">All Sprints</option>
             <option value="current">Current Sprint</option>
             <option value="backlog">Backlog</option>
             <option value="completed">Completed</option>
           </select>
-          <select className="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-full md:w-auto px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="all">All Assignees</option>
             <option value="me">Assigned to Me</option>
             <option value="unassigned">Unassigned</option>

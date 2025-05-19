@@ -7,10 +7,15 @@ import {
   FolderKanban, 
   Lightbulb, 
   BarChart3, 
-  Settings
+  Settings,
+  X
 } from 'lucide-react';
 
-const Sidebar = () => {
+interface SidebarProps {
+  onClose: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
   const navItems = [
     { title: 'Dashboard', icon: <LayoutDashboard size={20} />, path: '/dashboard' },
     { title: 'Test Cases', icon: <ClipboardCheck size={20} />, path: '/test-cases' },
@@ -22,21 +27,29 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="bg-white w-64 h-full shadow-md">
-      <div className="px-4 py-3 border-b border-gray-200">
+    <aside className="h-full shadow-md flex flex-col">
+      <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between">
         <div className="flex items-center">
           <div className="bg-blue-600 text-white p-2 rounded-md mr-2">
             <ClipboardCheck size={24} />
           </div>
           <h1 className="text-xl font-bold text-gray-800">My Project for details</h1>
         </div>
+        <button 
+          onClick={onClose}
+          className="p-2 text-gray-500 hover:text-gray-700 lg:hidden"
+        >
+          <X size={20} />
+        </button>
       </div>
-      <nav className="p-4">
+      
+      <nav className="flex-1 overflow-y-auto p-4">
         <ul>
           {navItems.map((item) => (
             <li key={item.path} className="mb-2">
               <NavLink
                 to={item.path}
+                onClick={onClose}
                 className={({ isActive }) =>
                   `flex items-center p-3 rounded-md transition-all ${
                     isActive
