@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import KanbanBoard from '../components/project/KanbanBoard';
 import ListView from '../components/project/ListView';
 import { LayoutList, Kanban as LayoutKanban, Calendar, GanttChart, Plus } from 'lucide-react';

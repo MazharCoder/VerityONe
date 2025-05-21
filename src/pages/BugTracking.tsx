@@ -8,7 +8,7 @@ const BugTracking = () => {
 
   return (
     <div className="h-full animate-[fadeIn_0.3s_ease-in-out]">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex [@media(max-width:360px)]:flex-col gap-2 justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Bug Tracking</h1>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
