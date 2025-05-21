@@ -18,7 +18,7 @@ const BugTracking = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-6 h-[calc(100vh-180px)]">
+      <div className="grid grid-cols-12 gap-6 ]">
         <div className="col-span-12 lg:col-span-7 bg-white rounded-lg shadow overflow-hidden border border-gray-200">
           <BugList onSelectBug={setSelectedBugId} />
         </div>

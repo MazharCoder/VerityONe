@@ -41,7 +41,7 @@ const ProjectManagement = () => {
 
   return (
     <div className="h-full animate-[fadeIn_0.3s_ease-in-out]">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+      <div className="flex flex-col md:flex-row justify-between items-center  md:items-center gap-4 mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Project Management</h1>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
@@ -51,9 +51,9 @@ const ProjectManagement = () => {
         </div>
       </div>
       
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+      <div className="flex flex-col md:flex-row items-start  md:items-center justify-between gap-4 mb-6">
         <div className="flex items-center w-full md:w-auto">
-          <div className="flex bg-gray-100 rounded-md p-1 w-full md:w-auto overflow-x-auto">
+          <div className="flex bg-gray-100 rounded-md p-1  [@media(max-width:768px)]:justify-evenly  w-full md:w-auto overflow-x-auto">
             <button
               onClick={() => setCurrentView('kanban')}
               className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm whitespace-nowrap ${
