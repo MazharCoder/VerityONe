@@ -86,14 +86,14 @@ const AIInsights = () => {
             <div className="space-y-4">
               {[1, 2, 3, 4].map((item) => (
                 <div key={item} className="border border-gray-200 rounded-lg p-4">
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
                     <div>
                       <h3 className="font-medium text-gray-800">User Authentication Flow Test #{item}</h3>
                       <p className="text-sm text-gray-600 mt-1">Generated from user stories and requirements analysis</p>
                     </div>
-                    <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">98% Confidence</span>
+                    <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full whitespace-nowrap">98% Confidence</span>
                   </div>
-                  <div className="mt-3 flex items-center gap-4">
+                  <div className="mt-3 flex flex-wrap items-center gap-4">
                     <button className="text-sm text-blue-600 hover:text-blue-800">View Details</button>
                     <button className="text-sm text-purple-600 hover:text-purple-800">Generate Similar</button>
                     <button className="text-sm text-gray-600 hover:text-gray-800">Export</button>
@@ -113,7 +113,7 @@ const AIInsights = () => {
             <div className="space-y-4">
               {[1, 2, 3, 4].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <div className="p-2 bg-purple-100 rounded-lg">
+                  <div className="p-2 bg-purple-100 rounded-lg shrink-0">
                     <Lightbulb className="text-purple-600" size={16} />
                   </div>
                   <div>

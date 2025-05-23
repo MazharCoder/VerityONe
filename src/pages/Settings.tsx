@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bell, Brain, Clock, FileText, Lock, Save, Settings as SettingsIcon, User, Users } from 'lucide-react';
+import { Bell, Brain, Lock, Save, Settings as SettingsIcon, User } from 'lucide-react';
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState('account');
@@ -228,6 +228,7 @@ const Settings = () => {
 
   return (
     <div className="flex flex-col sm:flex-row h-[calc(100vh-180px)] animate-[fadeIn_0.3s_ease-in-out] gap-6">
+      {/* Sidebar */}
       <div className={`
         fixed sm:relative inset-0 z-30 bg-white w-64 transform transition-transform duration-300 ease-in-out
         sm:transform-none sm:w-64 rounded-lg shadow mr-0 sm:mr-6 border border-gray-200 overflow-y-auto
@@ -318,6 +319,7 @@ const Settings = () => {
         <SettingsIcon size={24} />
       </button>
       
+      {/* Main content */}
       <div className="flex-1 bg-white rounded-lg shadow overflow-auto border border-gray-200 p-6">
         {renderTabContent()}
       </div>
