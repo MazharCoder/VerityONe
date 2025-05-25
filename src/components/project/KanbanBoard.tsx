@@ -164,11 +164,11 @@ const KanbanBoard: React.FC = () => {
   const [columns, setColumns] = useState<Column[]>(initialColumns);
 
   return (
-    <div className="h-[calc(100vh-250px)] flex gap-5 overflow-x-auto pb-4 pr-4">
+    <div className="h-[calc(100vh-250px)] flex gap-5   overflow-x-auto pb-4 pr-4">
       {columns.map((column) => (
         <div 
           key={column.id} 
-          className="bg-gray-100 rounded-lg shadow-sm min-w-[320px] w-[320px] flex flex-col h-full"
+          className="bg-gray-100 rounded-lg shadow-sm min-w-[320px] w-[320px]  flex flex-col h-full"
         >
           <div className="p-3 border-b border-gray-200 flex items-center justify-between">
             <div className="flex items-center">

@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import  { useState } from 'react';
 import TestSuiteTree from '../components/testcase/TestSuiteTree';
 import TestCaseList from '../components/testcase/TestCaseList';
 import TestCaseEditor from '../components/testcase/TestCaseEditor';
 import AITestGenerator from '../components/testcase/AITestGenerator';
 import { Plus, Brain } from 'lucide-react';
+=======
+import  { useState } from "react";
+import TestSuiteTree from "../components/testcase/TestSuiteTree";
+import TestCaseList from "../components/testcase/TestCaseList";
+import TestCaseEditor from "../components/testcase/TestCaseEditor";
+import AITestGenerator from "../components/testcase/AITestGenerator";
+import { Plus, Brain } from "lucide-react";
+>>>>>>> ac7580c703aef2e138578f686991c0b58d31d9c8
 
 const TestCaseManagement = () => {
   const [showAIGenerator, setShowAIGenerator] = useState(false);
@@ -11,10 +20,12 @@ const TestCaseManagement = () => {
 
   return (
     <div className="h-full animate-[fadeIn_0.3s_ease-in-out]">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Test Case Management</h1>
+      <div className="flex justify-between [@media(max-width:624px)]:flex-col  [@media(max-width:624px)]:gap-2  items-center mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">
+          Test Case Management
+        </h1>
         <div className="flex gap-3">
-          <button 
+          <button
             onClick={() => setShowAIGenerator(true)}
             className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
           >
@@ -28,12 +39,12 @@ const TestCaseManagement = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-6 h-[calc(100vh-180px)]">
-        <div className="col-span-12 md:col-span-3 bg-white rounded-lg shadow overflow-hidden border border-gray-200">
+      <div className="grid grid-cols-12 gap-6 ">
+        <div className=" md:col-span-3  col-span-12   rounded-lg shadow overflow-hidden border border-gray-200">
           <TestSuiteTree />
         </div>
         
-        <div className="col-span-12 md:col-span-9 grid grid-rows-1 gap-6">
+        <div className="col-span-12 md:col-span-9  grid grid-rows-1 gap-6">
           {selectedTestCase ? (
             <TestCaseEditor 
               testCaseId={selectedTestCase} 
@@ -46,7 +57,7 @@ const TestCaseManagement = () => {
           )}
         </div>
       </div>
-
+    
       {showAIGenerator && (
         <AITestGenerator onClose={() => setShowAIGenerator(false)} />
       )}
