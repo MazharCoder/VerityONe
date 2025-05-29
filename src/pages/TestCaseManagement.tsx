@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 import  { useState } from 'react';
 import TestSuiteTree from '../components/testcase/TestSuiteTree';
 import TestCaseList from '../components/testcase/TestCaseList';
 import TestCaseEditor from '../components/testcase/TestCaseEditor';
 import AITestGenerator from '../components/testcase/AITestGenerator';
 import { Plus, Brain } from 'lucide-react';
-=======
-import  { useState } from "react";
-import TestSuiteTree from "../components/testcase/TestSuiteTree";
-import TestCaseList from "../components/testcase/TestCaseList";
-import TestCaseEditor from "../components/testcase/TestCaseEditor";
-import AITestGenerator from "../components/testcase/AITestGenerator";
-import { Plus, Brain } from "lucide-react";
->>>>>>> ac7580c703aef2e138578f686991c0b58d31d9c8
 
 const TestCaseManagement = () => {
   const [showAIGenerator, setShowAIGenerator] = useState(false);

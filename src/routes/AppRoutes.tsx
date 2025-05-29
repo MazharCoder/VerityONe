@@ -9,6 +9,7 @@ import Reports from '../pages/Reports';
 import Settings from '../pages/Settings';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
+import { SignedIn } from '@clerk/clerk-react';
 
 const AppRoutes = () => {
   return (
@@ -16,7 +17,13 @@ const AppRoutes = () => {
       <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={
+        <SignedIn>
+
+          <Dashboard />
+        </SignedIn>
+        
+        } />
       <Route path="/test-cases" element={<TestCaseManagement />} />
       <Route path="/bugs" element={<BugTracking />} />
       <Route path="/projects" element={<ProjectManagement />} />
