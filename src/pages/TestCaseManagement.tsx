@@ -3,12 +3,10 @@ import TestSuiteTree from '../components/testcase/TestSuiteTree';
 import TestCaseList from '../components/testcase/TestCaseList';
 import TestCaseEditor from '../components/testcase/TestCaseEditor';
 import AITestGenerator from '../components/testcase/AITestGenerator';
-import NewTestCaseModal from '../components/testcase/NewTestCaseModal';
 import { Plus, Brain } from 'lucide-react';
 
 const TestCaseManagement = () => {
   const [showAIGenerator, setShowAIGenerator] = useState(false);
-  const [showNewTestCase, setShowNewTestCase] = useState(false);
   const [selectedTestCase, setSelectedTestCase] = useState<number | null>(null);
 
   return (
@@ -25,10 +23,7 @@ const TestCaseManagement = () => {
             <Brain size={16} />
             <span>AI Generate</span>
           </button>
-          <button 
-            onClick={() => setShowNewTestCase(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
+          <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
             <Plus size={16} />
             <span>New Test Case</span>
           </button>
@@ -56,10 +51,6 @@ const TestCaseManagement = () => {
     
       {showAIGenerator && (
         <AITestGenerator onClose={() => setShowAIGenerator(false)} />
-      )}
-
-      {showNewTestCase && (
-        <NewTestCaseModal onClose={() => setShowNewTestCase(false)} />
       )}
     </div>
   );
