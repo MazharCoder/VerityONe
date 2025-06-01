@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, User, LogIn } from "lucide-react";
-import { SignUp } from "@clerk/clerk-react";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -9,28 +8,46 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add signup logic here
-    navigate("/dashboard");
+    
+    try {
+      const response = await fetch('https://api.clerk.dev/v1/client/sign_ups', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}`
+        },
+        body: JSON.stringify({
+          email_address: email,
+          password,
+          first_name: name.split(' ')[0],
+          last_name: name.split(' ')[1] || ''
+        })
+      });
+
+      if (response.ok) {
+        navigate("/login");
+      } else {
+        console.error("Signup failed");
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      {/* <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-blue-600 p-2 rounded-md w-12 h-12 flex items-center justify-center mx-auto">
           <LogIn className="text-white" size={24} />
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Create your account
         </h2>
-      </div> */}
-
-      <div className="m-auto w-full sm:max-w-md">
-        <SignUp path="/signup" routing="path" signInUrl="/login" />
       </div>
 
-      {/* <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSignup}>
             <div>
@@ -139,7 +156,7 @@ const Signup = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
