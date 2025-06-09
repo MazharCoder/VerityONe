@@ -3,7 +3,6 @@ import { Search, Bell, HelpCircle, UserCircle, Menu } from "lucide-react";
 import {
   SignedIn,
   SignedOut,
-  SignInButton,
   UserButton,
   useUser
 } from "@clerk/clerk-react";
@@ -58,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         {/* User Area */}
         <div className="relative">
           <SignedIn>
-            {/* ✅ Use Clerk’s default UserButton (includes profile, manage account, sign out) */}
+            {/* ✅ Use Clerk's default UserButton (includes profile, manage account, sign out) */}
             <UserButton />
           </SignedIn>
 
@@ -69,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             >
               <UserCircle size={28} className="text-gray-600" />
               <span className="font-medium text-sm text-gray-700 hidden sm:block">
-                <SignInButton />
+                Sign In
               </span>
             </div>
           </SignedOut>
