@@ -5,7 +5,6 @@ import Layout from './components/layout/Layout';
 import './styles/animations.css';
 
 function App() {
-  
   return (
     <Router>
       <Layout>

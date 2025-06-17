@@ -27,35 +27,59 @@ const Login = () => {
             path="/login"
             redirectUrl="/dashboard"
             signUpUrl="/signup"
+            fallbackRedirectUrl="/dashboard"
             appearance={{
               elements: {
                 rootBox: "w-full",
                 card: "w-full shadow-none p-0 bg-transparent",
                 headerTitle: "hidden",
                 headerSubtitle: "hidden",
-                socialButtonsBlockButton: "w-full h-11 border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium",
+                socialButtonsBlockButton: "w-full h-11 border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium rounded-md transition-colors",
                 socialButtonsBlockButtonText: "text-gray-600 font-medium",
+                socialButtonsBlockButtonArrow: "text-gray-400",
                 dividerLine: "bg-gray-200",
                 dividerText: "text-gray-500 text-sm",
-                formFieldLabel: "text-gray-700 font-medium",
-                formFieldInput: "h-11 border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
-                formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white h-11 font-medium",
-                footerActionLink: "text-blue-600 hover:text-blue-700",
+                formFieldLabel: "text-gray-700 font-medium text-sm",
+                formFieldInput: "h-11 border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-md px-3 text-gray-900",
+                formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white h-11 font-medium rounded-md transition-colors",
+                footerActionLink: "text-blue-600 hover:text-blue-700 font-medium",
                 identityPreviewText: "text-gray-600",
                 identityPreviewEditButton: "text-blue-600 hover:text-blue-700",
                 formFieldInputShowPasswordButton: "text-gray-500 hover:text-gray-700",
-                otpCodeFieldInput: "border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+                otpCodeFieldInput: "border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-md",
                 formResendCodeLink: "text-blue-600 hover:text-blue-700",
-                alertText: "text-red-600 text-sm",
-                formFieldErrorText: "text-red-600 text-sm",
-                identityPreview: "border border-gray-200 rounded-lg",
-                formFieldSuccessText: "text-green-600 text-sm"
+                alertText: "text-red-600 text-sm bg-red-50 border border-red-200 rounded-md p-3",
+                formFieldErrorText: "text-red-600 text-sm mt-1",
+                identityPreview: "border border-gray-200 rounded-lg p-3",
+                formFieldSuccessText: "text-green-600 text-sm mt-1",
+                formFieldAction: "text-blue-600 hover:text-blue-700 text-sm",
+                formFieldHintText: "text-gray-500 text-sm",
+                formHeaderTitle: "text-xl font-semibold text-gray-900",
+                formHeaderSubtitle: "text-gray-600 text-sm",
+                main: "w-full",
+                formContainer: "w-full",
+                form: "w-full space-y-4",
+                formField: "w-full",
+                formFieldRow: "w-full",
+                footer: "mt-6",
+                footerAction: "text-center",
+                footerActionText: "text-gray-600 text-sm",
+                loadingSpinner: "text-blue-600"
               },
               layout: {
                 socialButtonsPlacement: "top",
                 socialButtonsVariant: "blockButton",
                 termsPageUrl: undefined,
-                privacyPageUrl: undefined
+                privacyPageUrl: undefined,
+                helpPageUrl: undefined,
+                showOptionalFields: true
+              },
+              variables: {
+                colorPrimary: "#2563eb",
+                colorBackground: "#ffffff",
+                colorInputBackground: "#ffffff",
+                colorInputText: "#1f2937",
+                borderRadius: "0.375rem"
               }
             }}
           />
