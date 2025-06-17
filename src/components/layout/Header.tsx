@@ -14,11 +14,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const navigate = useNavigate();
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
 
   useEffect(() => {
-    console.log("user", user);
-  }, [user]);
+    if (isLoaded && user) {
+      console.log("User loaded:", user);
+    }
+  }, [user, isLoaded]);
 
   return (
     <header className="bg-white h-16 border-b border-gray-200 flex items-center justify-between px-4 lg:px-6 sticky top-0 z-10">
@@ -57,13 +59,23 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         {/* User Area */}
         <div className="relative">
           <SignedIn>
-            {/* ✅ Use Clerk's default UserButton (includes profile, manage account, sign out) */}
-            <UserButton />
+            <UserButton 
+              afterSignOutUrl="/login"
+              appearance={{
+                elements: {
+                  avatarBox: "w-8 h-8",
+                  userButtonPopoverCard: "shadow-lg border border-gray-200",
+                  userButtonPopoverActionButton: "hover:bg-gray-50",
+                  userButtonPopoverActionButtonText: "text-gray-700",
+                  userButtonPopoverFooter: "hidden"
+                }
+              }}
+            />
           </SignedIn>
 
           <SignedOut>
             <div
-              className="flex items-center gap-2 pl-2 md:pl-4 border-l border-gray-200 cursor-pointer"
+              className="flex items-center gap-2 pl-2 md:pl-4 border-l border-gray-200 cursor-pointer hover:bg-gray-50 rounded-md px-2 py-1 transition-colors"
               onClick={() => navigate("/login")}
             >
               <UserCircle size={28} className="text-gray-600" />
